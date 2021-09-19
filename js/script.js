@@ -1,7 +1,17 @@
+// Update current year in footer automatically
 const yearEl = document.querySelector('.year');
 const currentYear = new Date().getFullYear();
 yearEl.textContent = currentYear;
 
+// Make mobile nav work
+const btnNavEl = document.querySelector('.btn-mobile-nav');
+const headerEl = document.querySelector('.header');
+
+btnNavEl.addEventListener('click', function() {
+    headerEl.classList.toggle('nav-open');
+});
+
+// Fixes flexbox gap property which is missing in some Safari versions
 function checkFlexGap() {
     var flex = document.createElement("div");
     flex.style.display = "flex";
